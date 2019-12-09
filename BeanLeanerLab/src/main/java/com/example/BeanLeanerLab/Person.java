@@ -8,7 +8,6 @@ public class Person {
     final Long id;
     public String name;
 
-
     public Person(Long id, String name) {
         this.id = id;
         this.name = name;
