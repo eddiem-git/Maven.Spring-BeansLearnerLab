@@ -5,24 +5,24 @@ import java.util.List;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
-public class Students extends People<Student> {
+public class Instructors extends People<Instructor> {
 
-    public Students(List<Student> personList) {
+    public Instructors(List<Instructor> personList) {
         super(personList);
     }
 
     @Override
-    public Iterator<Student> iterator() {
+    public Iterator<Instructor> iterator() {
         return null;
     }
 
     @Override
-    public void forEach(Consumer<? super Student> action) {
+    public void forEach(Consumer<? super Instructor> action) {
 
     }
 
     @Override
-    public Spliterator<Student> spliterator() {
+    public Spliterator<Instructor> spliterator() {
         return null;
     }
 }

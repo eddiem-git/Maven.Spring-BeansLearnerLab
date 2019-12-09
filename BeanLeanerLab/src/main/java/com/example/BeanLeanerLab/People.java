@@ -9,7 +9,7 @@ public abstract class People<PersonType extends Person> implements Iterable<Pers
     private final List<PersonType> personList;
 
 
-    private People(List<PersonType> personList){
+    public People(List<PersonType> personList){
         this.personList = personList;
 
     }
