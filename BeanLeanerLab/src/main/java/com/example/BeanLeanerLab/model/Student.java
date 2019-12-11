@@ -1,4 +1,6 @@
-package com.example.BeanLeanerLab;
+package com.example.BeanLeanerLab.model;
+
+import com.example.BeanLeanerLab.repos.Learner;
 
 public class Student extends Person implements Learner {
 

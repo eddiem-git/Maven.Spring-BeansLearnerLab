@@ -1,4 +1,4 @@
-package com.example.BeanLeanerLab;
+package com.example.BeanLeanerLab.repos;
 
 public interface Teacher {
 

@@ -1,8 +1,11 @@
-package com.example.BeanLeanerLab;
+package com.example.BeanLeanerLab.model;
+
+import com.example.BeanLeanerLab.repos.Learner;
+import com.example.BeanLeanerLab.repos.Teacher;
 
 import java.util.ArrayList;
 
-public class Instructor extends Person implements Teacher{
+public class Instructor extends Person implements Teacher {
 
     public Instructor(Long id, String name) {
         super(id, name);

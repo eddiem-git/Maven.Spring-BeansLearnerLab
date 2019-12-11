@@ -1,8 +1,4 @@
-package com.example.BeanLeanerLab;
-
-import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
+package com.example.BeanLeanerLab.model;
 
 public class Person {
     final Long id;
