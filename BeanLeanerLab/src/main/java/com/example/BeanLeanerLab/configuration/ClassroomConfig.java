@@ -2,7 +2,6 @@ package com.example.BeanLeanerLab.configuration;
 
 import com.example.BeanLeanerLab.model.Classroom;
 import com.example.BeanLeanerLab.model.Instructors;
-
 import com.example.BeanLeanerLab.model.Students;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,13 +12,13 @@ public class ClassroomConfig {
 
     @Bean(name = "currentCohort")
     @DependsOn({"instructors", "students"})
-    @Autowired
-    public Classroom currentCohort(@Qualifier("instructors") Instructors instructors, @Qualifier("students") Students students){
-            return new Classroom(instructors, students);
-    }
-    @Bean(name = "previousCohort")
-    @DependsOn({"instructors", "previousStudents"})
-    public Classroom previousCohort(@Qualifier("instructors") Instructors instructors, @Qualifier("previousStudents") Students students){
+    public Classroom currentCohort(Instructors instructors, Students students) {
         return new Classroom(instructors, students);
+    }
+
+    @Bean
+    @DependsOn({"instructors", "previousStudents"})
+    public Classroom previousCohort(Instructors instructors, Students previousStudents) {
+        return new Classroom(instructors, previousStudents);
     }
 }
