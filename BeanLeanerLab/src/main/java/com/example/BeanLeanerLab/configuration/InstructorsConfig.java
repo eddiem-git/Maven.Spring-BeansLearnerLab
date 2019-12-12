@@ -1,5 +1,4 @@
 package com.example.BeanLeanerLab.configuration;
-
 import com.example.BeanLeanerLab.model.Instructor;
 import com.example.BeanLeanerLab.model.Instructors;
 import org.springframework.context.annotation.Bean;
@@ -22,8 +21,6 @@ public class InstructorsConfig {
     public Instructors instructors(){
         return createInstructors(new String[]{"Froilan", "Chris", "Kris"});
    }
-
-
 
     private Instructors createInstructors(String[] names) {
         Instructors instructors = new Instructors();

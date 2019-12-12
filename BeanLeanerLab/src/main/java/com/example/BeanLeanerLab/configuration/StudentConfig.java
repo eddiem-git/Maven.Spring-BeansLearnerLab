@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class StudentConfig {
     //@Bean whose name attribute is not specified, defaults to the name of the method it is annotating.
-    @Bean(name = "currentStudents")
+    @Bean(name = "students")
     public Students currentStudents() {
         String[] currentStudents = {"Chung", "Kai", "Mike"};
         return createStudents(currentStudents);

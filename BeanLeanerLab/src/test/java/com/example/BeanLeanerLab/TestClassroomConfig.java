@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -14,18 +15,20 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class TestClassroomConfig {
 
     @Autowired
-    Classroom currentClassroom;
+    @Qualifier("currentCohort")
+    Classroom currentCohort;
 
     @Autowired
-    Classroom previousClassroom;
+    @Qualifier("previousCohort")
+    Classroom previousCohort;
 
     @Test
     public void checkCurrentClassroomSize(){
-        Integer expectedCurrentSize = 7;
-        Integer expectedPreviousSize = 4;
+        Integer expectedCurrentSize = 3;
+        Integer expectedPreviousSize = 3;
 
-        Integer actualCurrentSize = currentClassroom.getStudents().size();
-        Integer actualPreviousSize = currentClassroom.getInstructors().size();
+        Integer actualCurrentSize = currentCohort.getInstructors().size();
+        Integer actualPreviousSize = currentCohort.getStudents().size();
 
         Assert.assertEquals(expectedCurrentSize,actualCurrentSize);
         Assert.assertEquals(expectedPreviousSize,actualPreviousSize);
@@ -33,11 +36,11 @@ public class TestClassroomConfig {
 
     @Test
     public void checkPreviousClassroomSize(){
-        Integer expectedCurrentSize = 4;
-        Integer expectedPreviousSize = 4;
+        Integer expectedCurrentSize = 3;
+        Integer expectedPreviousSize = 3;
 
-        Integer actualCurrentSize = previousClassroom.getInstructors().size();
-        Integer actualPreviousSize = previousClassroom.getInstructors().size();
+        Integer actualCurrentSize = previousCohort.getInstructors().size();
+        Integer actualPreviousSize = previousCohort.getStudents().size();
 
         Assert.assertEquals(expectedCurrentSize,actualCurrentSize);
         Assert.assertEquals(expectedPreviousSize,actualPreviousSize);
